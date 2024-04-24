@@ -18,17 +18,44 @@ require(tigerstats)
 require(tidyverse)
 ```
 
+## Read in fisy data
+```{r}
+fishALL = read_csv('Fish.csv')
+```
+
+
 # Predicting Fish Weight
 
 
 ## Perch
 
+```{r}
+perchFish = filter(fishALL, Species=='Perch') 
+perchModel = lm(Weight~Length1+Length2+Length3+Height+Width, data= perchFish)
+summary.lm(perchModel)
+```
+
+
 ### Best Models
+We find best models for for all three species
+
+```{r}
+best_models_perch <- step(perchModel)
+```
+
+```{r}
+summary.lm(best_models_perch)
+```
+
+
 
 ### Best Two regressor model
 
 
 ## Pike
+
+
+
 
 ### Best Models
 
