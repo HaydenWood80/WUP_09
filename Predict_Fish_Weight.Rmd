@@ -87,11 +87,28 @@ summary.lm(pikeModel)
 
 ### Best Models
 
+```{r}
+best_models_pike <- step(pikeModel)
+summary.lm(best_models_pike)
+```
 
 
 ### Best Two regressor model
 
+```{r}
+best_two_regressor_pike <- stepAIC(pikeModel, direction = "both", trace = FALSE, k = 2)
+summary.lm(best_two_regressor_pike)
+```
+
+
 ## Roach
+
+```{r}
+roachFish = filter(fishALL, Species=='Roach') 
+roachModel = lm(Weight~Length1+Length2+Length3+Height+Width, data= roachFish)
+summary.lm(roachModel)
+```
+
 
 ### Best Models
 
