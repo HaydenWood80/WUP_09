@@ -127,3 +127,5 @@ summary.lm(best_two_regressor_roach)
 
 
 ## Final Summary Statements
+
+After analyzing the data, we found that for the Perch species, the best regressor model for predicting fish weight includes the predictors Length1, Length2, Length3, Height, and Width. Similarly, for the Pike and Roach species, the same set of predictors yielded the best regressor models. Additionally, to aid in model selection and stepwise regression, we had to add the MASS package to our R environment.
