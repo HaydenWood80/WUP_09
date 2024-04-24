@@ -18,6 +18,16 @@ require(tigerstats)
 require(tidyverse)
 ```
 
+```{r}
+install.packages("MASS")  # Install the MASS package
+library(MASS)             # Load the MASS package
+```
+
+```{r}
+library(MASS)
+```
+
+
 ## Read in fisy data
 ```{r}
 fishALL = read_csv('Fish.csv')
@@ -52,12 +62,32 @@ summary.lm(best_models_perch)
 ### Best Two regressor model
 
 
+```{r}
+best_two_regressor_perch <- stepAIC(perchModel, direction = "both", trace = FALSE, k = 2)
+```
+
+```{r}
+summary.lm(best_two_regressor_perch)
+```
+
+
 ## Pike
+```{r}
+pikeFish = filter(fishALL, Species=='Pike') 
+```
 
+```{r}
+pikeModel = lm(Weight~Length1+Length2+Length3+Height+Width, data= pikeFish)
+```
 
+```{r}
+summary.lm(pikeModel)
+```
 
 
 ### Best Models
+
+
 
 ### Best Two regressor model
 
