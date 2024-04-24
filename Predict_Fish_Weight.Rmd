@@ -112,6 +112,18 @@ summary.lm(roachModel)
 
 ### Best Models
 
+```{r}
+best_models_roach <- step(roachModel)
+summary.lm(best_models_roach)
+```
+
+
 ### Best Two regressor model
+
+```{r}
+best_two_regressor_roach <- stepAIC(roachModel, direction = "both", trace = FALSE, k = 2)
+summary.lm(best_two_regressor_roach)
+```
+
 
 ## Final Summary Statements
