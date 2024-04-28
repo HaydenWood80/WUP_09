@@ -16,17 +16,8 @@ output:
 ```{r include=FALSE,echo=FALSE}
 require(tigerstats)
 require(tidyverse)
+require(MASS)
 ```
-
-```{r}
-install.packages("MASS")  # Install the MASS package
-library(MASS)             # Load the MASS package
-```
-
-```{r}
-library(MASS)
-```
-
 
 ## Read in fisy data
 ```{r}
